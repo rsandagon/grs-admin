@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="description"
+      content="Web site created using create-react-app"
+    />
+    <link rel="apple-touch-icon" href="logo192.png" />
+    <!--
+      manifest.json provides metadata used when your web app is installed on a
+      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
+    -->
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
+    <link href="https://unpkg.com/tailwindcss/dist/tailwind.min.css" rel="stylesheet"> <!--Replace with your tailwind.css once created-->
+    <link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet"> <!--Totally optional :) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.min.js" integrity="sha256-xKeoJ50pzbUGkpQxDYHD7o7hxe0LaOGeguUidbq6vis=" crossorigin="anonymous"></script>
+
+    <title>GRS Admin Dashboard</title>
+  </head>
+  <body class="bg-gray-900 font-sans leading-normal tracking-normal mt-12">
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+    <script>
+      function chartSample(){
+          const chart1 = new Chart(document.getElementById("chartjs-7"), {
+              "type": "bar",
+              "data": {
+                  "labels": ["January", "February", "March", "April"],
+                  "datasets": [{
+                      "label": "Routine",
+                      "data": [10, 20, 30, 40],
+                      "borderColor": "rgb(255, 99, 132)",
+                      "backgroundColor": "rgba(255, 99, 132, 0.2)"
+                  }, {
+                      "label": "Activities",
+                      "data": [5, 15, 10, 30],
+                      "type": "line",
+                      "fill": false,
+                      "borderColor": "rgb(54, 162, 235)"
+                  }]
+              },
+              "options": {
+                  "scales": {
+                      "yAxes": [{
+                          "ticks": {
+                              "beginAtZero": true
+                          }
+                      }]
+                  }
+              }
+          });
+
+          const chart2 = new Chart(document.getElementById("chartjs-0"), {
+              "type": "line",
+              "data": {
+                  "labels": ["January", "February", "March", "April", "May", "June", "July"],
+                  "datasets": [{
+                      "label": "Special Jobs",
+                      "data": [65, 59, 80, 81, 56, 55, 40],
+                      "fill": false,
+                      "borderColor": "rgb(75, 192, 192)",
+                      "lineTension": 0.1
+                  }]
+              },
+              "options": {}
+          });
+
+          const chart3 = new Chart(document.getElementById("chartjs-4"), {
+              "type": "doughnut",
+              "data": {
+                  "labels": ["Incomplete", "In Progress", "Completed"],
+                  "datasets": [{
+                      "label": "Issues",
+                      "data": [100, 50, 300],
+                      "backgroundColor": ["rgb(255, 99, 132)", "rgb(54, 162, 235)", "rgb(255, 205, 86)"]
+                  }]
+              }
+          });
+      }
+      chartSample();
+    </script>
+  </body>
+</html>
